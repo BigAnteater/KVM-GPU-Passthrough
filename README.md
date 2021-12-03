@@ -22,4 +22,4 @@ And then you should be good to go.
 
 Preparing GRUB is very simple. Just follow these instructions.
 
-1) Clone the repository: ```https://github.com/BigAnteater/KVM-GPU-Passthrough```
+1) Clone the repository: ``https://github.com/BigAnteater/KVM-GPU-Passthrough``
