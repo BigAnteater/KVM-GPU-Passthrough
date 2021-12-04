@@ -1,6 +1,6 @@
 # KVM-GPU-Passthrough
 
-If you want a video guide to walk you through this, check out my tutorial:
+If you want a video guide to walk you through this, check out my tutorial: I'm still editing it
 
 ***THIS GUIDE IS MEANT FOR ADVANCED ARCH LINUX USERS***
 
@@ -110,6 +110,19 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
     </kvm>
     <vmport state='off'/>
     <ioapic driver='kvm'/>
+    
 ```
 ![Screen Capture_virt-manager_20211204072338](https://user-images.githubusercontent.com/77298458/144714995-48ca276b-9300-44c6-9dca-15a1e69705ce.png)
 
+### Editing hooks
+This is usefull for people who want to name their VMs to something other than win10.
+
+1) Edit the hooks script by typing sudo nano /etc/libvirt/hooks/qemu
+2) On the line with the if then statement, add in ``|| [[ $OBJECT == "RENAME TO YOUR VM" ]]`` before the ;.
+![Screen Capture_select-area_20211204074514](https://user-images.githubusercontent.com/77298458/144715662-f66088d0-d0b7-44f7-a515-2df7419af11e.png)
+3) Now you should be good to turn on your VM! On Windows drivers will auto install.
+
+
+### SHOUTOUT TO RisingPrism GITLAB FOR SCRIPTS & IDEA: https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home. SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE: https://youtu.be/BUSrdUoedTo.
+
+### Also thank you for choosing my guide! it took a lot of time to complete the scripts and readme. Multiple hairs were torn out in the making.
