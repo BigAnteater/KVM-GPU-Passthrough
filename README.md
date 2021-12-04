@@ -89,7 +89,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 2) Pass through your audio device and your USB controller. It will look like this for me
 ![Screen Capture_virt-manager_20211204065241](https://user-images.githubusercontent.com/77298458/144714016-bf504808-f7ff-4a2f-b533-540d596e794c.png)
 3) Remember the ROM we patched? Well we're gonna use it now. 
-4) Edit the XML of each passed through PCI device that has to do with your GPU and add the line ``rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. Make sure to rename ROMFILE to what you named your ROM.
+4) Edit the XML of each passed through PCI device that has to do with your GPU and add the line ``<rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. Make sure to rename ROMFILE to what you named your ROM.
 ![Screen Capture_virt-manager_20211204071027](https://user-images.githubusercontent.com/77298458/144714606-ac7d7cfe-b567-492a-a863-08557a58b5c8.png)
 5) Lastly, remove every spice/qxl device from your virtual machine
 ![Screen Capture_virt-manager_20211204071816](https://user-images.githubusercontent.com/77298458/144714841-974cdf8e-57ef-448f-ae2a-cd45809ddae2.png)
