@@ -62,7 +62,7 @@ To configure libvirt run my script which configures libvirt and QEMU for you by 
 ![Screen Capture_select-area_20211203201054](https://user-images.githubusercontent.com/77298458/144696438-6e7afb3e-b808-4bc7-a0be-8683c046f445.png)
 5) Then, delete everything before the "U.s", and save your ROM as something simple (i.e: patch.rom).
 ![Screen Capture_select-area_20211203201250](https://user-images.githubusercontent.com/77298458/144696539-44ce50f6-c6fd-4d2d-9564-3be3fd663585.png)
-6) Once your ROM has been patched, open your terminal in the folder which you have your ROM saved in, and type in ``sudo mkdir /var/lib/libvirt/vbios/ && mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios``
+6) Once your ROM has been patched, open your terminal in the folder which you have your ROM saved in, and type in ``sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios`` and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
 7) Then your ROM should be all patched and good to go!
 
 **Hook Scripts**
@@ -75,3 +75,19 @@ This is an amazing hook script made by @risingprismtv on gitlab. What this scrip
 
 **Adding your GPU and USB devices to the VM**
 
+For the VM to actually pass the gpu, you need to add the PCI device to your VM. Here is how to do so.
+
+*Before we edit pass through our GPU, make sure to enable XML editing.*
+![Screen Capture_virt-manager_20211204070245](https://user-images.githubusercontent.com/77298458/144714348-ef5a9437-624e-41f7-b94f-9889722c993a.png)
+
+
+
+1) Add every PCI device which has to do with your graphics card to the VM.
+![Screen Capture_select-area_20211204064804](https://user-images.githubusercontent.com/77298458/144713848-a7918b97-5e1c-4961-b9ec-a9fc1259d777.png)
+2) Pass through your audio device and your USB controller. It will look like this for me
+![Screen Capture_virt-manager_20211204065241](https://user-images.githubusercontent.com/77298458/144714016-bf504808-f7ff-4a2f-b533-540d596e794c.png)
+3) Remember the ROM we patched? Well we're gonna use it now. 
+4) Edit the XML of each passed through PCI device that has to do with your GPU and add the line ``rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. Make sure to rename ROMFILE to what you named your ROM.
+![Screen Capture_virt-manager_20211204071027](https://user-images.githubusercontent.com/77298458/144714606-ac7d7cfe-b567-492a-a863-08557a58b5c8.png)
+5) Lastly, remove every spice/qxl device from your virtual machine
+![Screen Capture_select-area_20211204071421](https://user-images.githubusercontent.com/77298458/144714732-e2f5da40-0901-48ef-bd9f-360a97ed93d4.png)
