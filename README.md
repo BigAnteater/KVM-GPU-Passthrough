@@ -123,6 +123,6 @@ This is usefull for people who want to name their VMs to something other than wi
 3) Now you should be good to turn on your VM! On Windows drivers will auto install.
 
 
-### SHOUTOUT TO RisingPrism GITLAB FOR SCRIPTS & IDEA: https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home. SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE: https://youtu.be/BUSrdUoedTo.
+### SHOUTOUT TO RisingPrism GITLAB FOR SCRIPTS & IDEA: https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home. SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE: https://youtu.be/BUSrdUoedTo. https://github.com/pavolelsig/Ubuntu_GVT-g_helper/blob/master/part_1.sh FOR MAKING GRUB SHELL SCRIPT (I changed it to work for arch).
 
 ### Also thank you for choosing my guide! it took a lot of time to complete the scripts and readme. Multiple hairs were torn out in the making.
