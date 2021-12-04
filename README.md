@@ -4,7 +4,7 @@ If you want a video guide to walk you through this, check out my tutorial:
 
 ***THIS GUIDE IS MEANT FOR ADVANCED ARCH LINUX USERS***
 
-**Preparations**
+### Preparations
 
 To prepare, make sure you have virtualization enabled in your BIOS.
 
@@ -21,11 +21,13 @@ For you lame Intel users, just enable
 
 And then clone the repository by typing:
 
-``git clone https://github.com/BigAnteater/KVM-GPU-Passthrough/ && cd KVM-GPU-Passthrough``
+```
+git clone https://github.com/BigAnteater/KVM-GPU-Passthrough/ && cd KVM-GPU-Passthrough
+```
 
 And then you should be good to go.
 
-**Preparing GRUB**
+### Preparing GRUB
 
 Preparing GRUB is very simple. Just follow these instructions.
 
@@ -33,11 +35,11 @@ Preparing GRUB is very simple. Just follow these instructions.
 2) Then run the script: AMD: ``sudo ./grub_setup_amd.sh`` Intel: ``sudo ./grub_setup_intel.sh``.
 3) Then just follow the instructions in script!
 
-**Configuring Libvirt**
+### Configuring Libvirt
 
 To configure libvirt run my script which configures libvirt and QEMU for you by typing ``sudo ./libvirt_configuration.sh``.
 
-**Setting up Virt Manager**
+### Setting up Virt Manager
 
 1) Download the latest ISO for Windows 10 from: https://www.microsoft.com/en-us/software-download/windows10ISO.
 2) Open up Virt Manager and create a new virtual machine.
@@ -52,7 +54,7 @@ To configure libvirt run my script which configures libvirt and QEMU for you by 
 9) And then you should be able to click begin installation!
 10) After you finish installing windows, you should be good to shut down the VM and follow along with the next steps.
 
-**Patching your ROM**
+### Patching your ROM
 
 1) Go to https://www.techpowerup.com/vgabios/ and download the ROM of your ***exact*** GPU.
 ![Screen Capture_select-area_20211203200439](https://user-images.githubusercontent.com/77298458/144696258-5a424e34-236a-4e20-adf7-723068707712.png)
@@ -65,7 +67,7 @@ To configure libvirt run my script which configures libvirt and QEMU for you by 
 6) Once your ROM has been patched, open your terminal in the folder which you have your ROM saved in, and type in ``sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios`` and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
 7) Then your ROM should be all patched and good to go!
 
-**Hook Scripts**
+### Hook Scripts
 
 This is an amazing hook script made by @risingprismtv on gitlab. What this script does is stop your display manager service and all of your running programs, and unhooks your graphics card off of Linux and rehooks it onto the Windows VM.
 
@@ -73,7 +75,7 @@ This is an amazing hook script made by @risingprismtv on gitlab. What this scrip
 2) Run the install script as sudo: ``sudo ./install-hooks.sh``.
 3) The scripts will successfully install into their required places without issue!
 
-**Adding your GPU and USB devices to the VM**
+### Adding your GPU and USB devices to the VM
 
 For the VM to actually pass the gpu, you need to add the PCI device to your VM. Here is how to do so.
 
@@ -90,4 +92,24 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 4) Edit the XML of each passed through PCI device that has to do with your GPU and add the line ``rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. Make sure to rename ROMFILE to what you named your ROM.
 ![Screen Capture_virt-manager_20211204071027](https://user-images.githubusercontent.com/77298458/144714606-ac7d7cfe-b567-492a-a863-08557a58b5c8.png)
 5) Lastly, remove every spice/qxl device from your virtual machine
-![Screen Capture_select-area_20211204071421](https://user-images.githubusercontent.com/77298458/144714732-e2f5da40-0901-48ef-bd9f-360a97ed93d4.png)
+![Screen Capture_virt-manager_20211204071816](https://user-images.githubusercontent.com/77298458/144714841-974cdf8e-57ef-448f-ae2a-cd45809ddae2.png)
+6) If you are using an NVIDIA graphics card, add these lines to your XML overview.
+```
+  </os>
+  <features>
+    <acpi/>
+    <apic/>
+    <hyperv>
+      <relaxed state='on'/>
+      <vapic state='on'/>
+      <spinlocks state='on' retries='8191'/>
+      <vendor_id state='on' value='123456789123'/>
+    </hyperv>
+    <kvm>
+      <hidden state='on'/>
+    </kvm>
+    <vmport state='off'/>
+    <ioapic driver='kvm'/>
+```
+![Screen Capture_virt-manager_20211204072338](https://user-images.githubusercontent.com/77298458/144714995-48ca276b-9300-44c6-9dca-15a1e69705ce.png)
+
