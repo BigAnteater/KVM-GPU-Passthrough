@@ -35,14 +35,14 @@ Preparing GRUB is very simple. Just follow these instructions.
 
 **Configuring Libvirt**
 
-To configure libvirt run my script which configures libvirt and QEMU for you by typing ``./libvirt_configuration.sh``.
+To configure libvirt run my script which configures libvirt and QEMU for you by typing ``sudo ./libvirt_configuration.sh``.
 
 **Setting up Virt Manager**
 
 1) Download the latest ISO for Windows 10 from: https://www.microsoft.com/en-us/software-download/windows10ISO.
 2) Open up Virt Manager and create a new virtual machine.
 3) Select local install media, and choose your Windows 10 ISO. Then choose how much ram you want, and how many CPUs you want. You can select your own custom storage, but for the sake of this guide I will be using the default location. Make sure to allocate at least 60 gigabytes.
-5) Name the Virtual Machine Win10, and tick the box which says customize before install.
+5) Name the Virtual Machine Win10, and tick the box which says customize configuration before install.
 6) Make sure your firmware is set to OVMF_CODE.fd, because you need the special UEFI firmware for the VM to boot properly.
 ![Screen Capture_virt-manager_20211203210303](https://user-images.githubusercontent.com/77298458/144697907-4a5b9099-9415-45df-8a3c-a44274dde6e6.png)
 7) Then go into the CPU options and change it so that it looks like the picture below. Change the ammount of cores to however many CPU cores you want, and make sure to set the threads ammount to 2 because it will give 2 threads to every 1 core.
@@ -71,4 +71,7 @@ This is an amazing hook script made by @risingprismtv on gitlab. What this scrip
 
 1) Clone Risngprism's single GPU passthrough gitlab page: ``git clone https://gitlab.com/risingprismtv/single-gpu-passthrough && cd single-gpu-passthrough``.
 2) Run the install script as sudo: ``sudo ./install-hooks.sh``.
-3) 
+3) The scripts will successfully install into their required places without issue!
+
+**Adding your GPU and USB devices to the VM**
+
