@@ -117,7 +117,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 ### Editing hooks
 This is usefull for people who want to name their VMs to something other than win10.
 
-1) Edit the hooks script by typing sudo nano /etc/libvirt/hooks/qemu
+1) Edit the hooks script by typing ``sudo nano /etc/libvirt/hooks/qemu``
 2) On the line with the if then statement, add in ``|| [[ $OBJECT == "RENAME TO YOUR VM" ]]`` before the ;.
 ![Screen Capture_select-area_20211204074514](https://user-images.githubusercontent.com/77298458/144715662-f66088d0-d0b7-44f7-a515-2df7419af11e.png)
 3) Now you should be good to turn on your VM! On Windows drivers will auto install.
