@@ -13,7 +13,7 @@ sed -i -e "s|^GRUB_CMDLINE_LINUX_DEFAULT.*|${GRUB}|" /etc/default/grub
 
 grub-mkconfig -o /boot/grub/grub.cfg     
 sleep 5s
-              
+clear            
 echo
 echo "Grub bootloader has been modified successfully, reboot time!"
 echo "press Y to reboot now and n to reboot later."
