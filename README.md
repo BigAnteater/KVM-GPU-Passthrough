@@ -1,6 +1,6 @@
 # KVM-GPU-Passthrough
 
-If you want a video guide to walk you through this, check out my tutorial: I'm still editing it
+If you want a video guide to walk you through this, check out my tutorial: https://youtu.be/R5c25kV4tZ0
 
 ***THIS GUIDE IS MEANT FOR ADVANCED ARCH LINUX USERS***
 
