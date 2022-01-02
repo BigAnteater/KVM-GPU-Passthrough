@@ -17,6 +17,15 @@ echo "Now it's time to edit your configs!"
 mv /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old
 echo "mv /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old"
 sleep 1s
+echo "What is your username?"
+read USERNAME
+sleep 1s
+clear
+echo "Adding $USERNAME to kvm and libvirt groups..."
+gpasswd -M $USERNAME kvm
+gpasswd -M $USERNAME libvirt
+sleep 2s
+clear
 mv libvirtd.conf /etc/libvirt
 echo "mv libvirtd.conf /etc/libvirt"
 sleep 1s
