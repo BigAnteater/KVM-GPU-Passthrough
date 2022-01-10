@@ -19,7 +19,7 @@ echo "Grub bootloader has been modified successfully, reboot time!"
 echo "press Y to reboot now and n to reboot later."
 read REBOOT
 
-if [ $REBOOT = "y" ]
+if [ $REBOOT = "Y" ]
         then
                 reboot
 fi
