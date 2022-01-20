@@ -6,6 +6,7 @@ If you want a video guide to walk you through this, check out my tutorial: https
 
 ### Preparations
 
+
 To prepare, make sure you have virtualization enabled in your BIOS.
 
 Create your own rom (optional) from a windows dual boot install
@@ -67,11 +68,15 @@ Download GPU-Z here at https://www.techpowerup.com/gpuz/
 
 click on what has been circled and click write to file, it will save it as a rom; be sure to save it to where arch has access to it otherwise you will have to create a mount point.
 
+![SavingBios](https://user-images.githubusercontent.com/68661602/150429190-1fa45b23-c6b0-4a4b-9d32-ed4f98c453d8.png)
+
 #### For AMD users the process should be the same.
 
 ### Viewing VBios from arch
 
 To view the vbios from arch you will simply need to install nvida-settings for nvidia users, then on the GPU tab you will be able to view the vbios.
+
+![FahGRWf](https://user-images.githubusercontent.com/68661602/150429338-c041e1c9-3f23-4bd8-ab5a-3570580a03bf.png)
 
 then do some google-fu site::techpowerup <vbios goes here>
   
