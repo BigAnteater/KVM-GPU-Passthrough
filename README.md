@@ -159,7 +159,6 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
     <timer name="hypervclock" present="yes"/>
   </clock>
 ```
-![Screen Capture_virt-manager_20211204072338](https://user-images.githubusercontent.com/77298458/144714995-48ca276b-9300-44c6-9dca-15a1e69705ce.png)
 
 ### Editing hooks
 This is usefull for people who want to name their VMs to something other than win10.
