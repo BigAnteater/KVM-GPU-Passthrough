@@ -8,6 +8,9 @@ If you want a video guide to walk you through this, check out my tutorial: https
 
 To prepare, make sure you have virtualization enabled in your BIOS.
 
+Create your own rom (optional) from a windows dual boot install
+Download your rom from with a bios with nvidia-settings.
+
 For AMD this could be done by enabling
 
   • IOMMU
@@ -53,6 +56,30 @@ To configure libvirt run my script which configures libvirt and QEMU for you by 
 ![Screen Capture_virt-manager_20211203210927](https://user-images.githubusercontent.com/77298458/144698047-39cfddde-aa28-4d4c-8f0b-bff81a5c21ca.png)
 9) And then you should be able to click begin installation!
 10) After you finish installing windows, you should be good to shut down the VM and follow along with the next steps.
+
+### Creating your rom
+
+To create a rom you would need to download the following tools in a windows machine (dualboot)
+
+1) Gpu-Z
+
+Download GPU-Z here at https://www.techpowerup.com/gpuz/
+
+click on what has been circled and click write to file, it will save it as a rom; be sure to save it to where arch has access to it otherise you will have to create a mount point.
+
+#### For AMD users the process should be the same.
+
+### Viewing VBios from arch
+
+To view the vbios from arch you will simply need to install nvida-settings for nvidia users, then on the GPU tab you will be able to view the vbios.
+
+### AMD Users
+
+You would have to try this tool, haven't tried it because I do not have an AMD gpu; sorry.
+https://andrealmeid.com/post/2020-05-01-vbios2/
+
+just simply follow the instructions on how to save the vbios in linux, do not write.
+
 
 ### Patching your ROM
 
