@@ -6,11 +6,7 @@ If you want a video guide to walk you through this, check out my tutorial: https
 
 ### Preparations
 
-
 To prepare, make sure you have virtualization enabled in your BIOS.
-
-Create your own rom (optional) from a windows dual boot install
-Download your rom from with a bios with nvidia-settings.
 
 For AMD this could be done by enabling
 
