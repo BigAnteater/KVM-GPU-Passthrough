@@ -129,24 +129,35 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 ![Screen Capture_virt-manager_20211204071027](https://user-images.githubusercontent.com/77298458/144714606-ac7d7cfe-b567-492a-a863-08557a58b5c8.png)
 5) Lastly, remove every spice/qxl device from your virtual machine
 ![Screen Capture_virt-manager_20211204071816](https://user-images.githubusercontent.com/77298458/144714841-974cdf8e-57ef-448f-ae2a-cd45809ddae2.png)
-6) If you are using an NVIDIA graphics card, add these lines to your XML overview.
+6) If you are using an NVIDIA graphics card, add these lines to your XML overview. Also this could be used to hide your VM, be sure to turn ON hyper-v in windows features.
 ```
   </os>
   <features>
     <acpi/>
     <apic/>
-    <hyperv>
-      <relaxed state='on'/>
-      <vapic state='on'/>
-      <spinlocks state='on' retries='8191'/>
-      <vendor_id state='on' value='123456789123'/>
+    <hyperv mode="custom">
+      <relaxed state="on"/>
+      <vapic state="on"/>
+      <spinlocks state="on" retries="8191"/>
+      <vpindex state="on"/>
+      <runtime state="on"/>
+      <synic state="on"/>
+      <reset state="on"/>
     </hyperv>
     <kvm>
-      <hidden state='on'/>
+      <hidden state="on"/>
     </kvm>
-    <vmport state='off'/>
-    <ioapic driver='kvm'/>
-    
+    <vmport state="off"/>
+  </features>
+  <cpu mode="host-passthrough" check="none" migratable="on">
+    <topology sockets="1" dies="1" cores="2" threads="2"/>
+  </cpu>
+  <clock offset="localtime">
+    <timer name="rtc" tickpolicy="catchup"/>
+    <timer name="pit" tickpolicy="delay"/>
+    <timer name="hpet" present="no"/>
+    <timer name="hypervclock" present="yes"/>
+  </clock>
 ```
 ![Screen Capture_virt-manager_20211204072338](https://user-images.githubusercontent.com/77298458/144714995-48ca276b-9300-44c6-9dca-15a1e69705ce.png)
 
