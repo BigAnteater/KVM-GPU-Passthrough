@@ -65,13 +65,17 @@ To create a rom you would need to download the following tools in a windows mach
 
 Download GPU-Z here at https://www.techpowerup.com/gpuz/
 
-click on what has been circled and click write to file, it will save it as a rom; be sure to save it to where arch has access to it otherise you will have to create a mount point.
+click on what has been circled and click write to file, it will save it as a rom; be sure to save it to where arch has access to it otherwise you will have to create a mount point.
 
 #### For AMD users the process should be the same.
 
 ### Viewing VBios from arch
 
 To view the vbios from arch you will simply need to install nvida-settings for nvidia users, then on the GPU tab you will be able to view the vbios.
+
+then do some google-fu site::techpowerup <vbios goes here>
+  
+  Example site::techpowerup 86.04.99.00.06
 
 ### AMD Users
 
