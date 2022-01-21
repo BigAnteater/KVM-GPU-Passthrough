@@ -118,15 +118,15 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
   1) Add every PCI device which has to do with your graphics card to the VM.
 
   ![Screen Capture_select-area_20211204064804](https://user-images.githubusercontent.com/77298458/144713848-a7918b97-5e1c-4961-b9ec-a9fc1259d777.png)
-
+  
+  ![Screen Capture_virt-manager_20211204065241](https://user-images.githubusercontent.com/77298458/144714016-bf504808-f7ff-4a2f-b533-540d596e794c.png)
+  
   2) Pass through your audio device and your USB controller.
 
   3) usb redirect any usb devices that are having issues, i would redirect your headset for headset users and the mouse.
   add hardware > usb host device > the desired device
   
 ![oU1II4D](https://user-images.githubusercontent.com/68661602/150458011-ba7da45d-dfd9-41fe-a7e4-901a2aa0c433.png)
-
-![Screen Capture_virt-manager_20211204065241](https://user-images.githubusercontent.com/77298458/144714016-bf504808-f7ff-4a2f-b533-540d596e794c.png)
 
   4) Remember the ROM we patched? Well we're gonna use it now. 
 
