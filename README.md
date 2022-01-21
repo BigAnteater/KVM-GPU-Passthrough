@@ -152,7 +152,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 
   ![Screen Capture_virt-manager_20211204071816](https://user-images.githubusercontent.com/77298458/144714841-974cdf8e-57ef-448f-ae2a-cd45809ddae2.png)
 
-  7) If you are using an NVIDIA graphics card, add these lines to your XML overview. Also this could be used to hide your VM, be sure to turn ON hyper-v in windows features.
+  7) If you are using an NVIDIA graphics card, add these lines to your XML overview. Also this could be used to hide your VM so I would go ahead an add anyway, be sure to turn ON hyper-v in windows features.
   
   ![Ic8UR0g](https://user-images.githubusercontent.com/68661602/150457603-8bb1662e-ba13-4a07-baad-7666bebb6088.png)
   
@@ -191,6 +191,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 <p>
 
 ```
+  <! --
     <domain type="kvm">
   <name>win11</name>
   <uuid>1ef73810-849a-4a4e-84be-30f90332e603</uuid>
@@ -205,6 +206,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
   <os>
     <type arch="x86_64" machine="pc-q35-6.2">hvm</type>
     <loader readonly="yes" type="pflash">/usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd</loader>
+    would be used for secure boot, OVMF_CODE.secboot.fd is nesscary for win 11
     <nvram>/var/lib/libvirt/qemu/nvram/win11_VARS.fd</nvram>
     <bootmenu enable="yes"/>
   </os>
@@ -355,6 +357,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
     <tpm model="tpm-crb">
       <backend type="emulator" version="2.0"/>
     </tpm>
+      This is just a emulated tpm module, again would be needed for windows 11.
     <audio id="1" type="spice"/>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
@@ -401,7 +404,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
     </memballoon>
   </devices>
 </domain>
-  
+  -->
 ```
 
 </p>
