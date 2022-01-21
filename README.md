@@ -441,6 +441,14 @@ efibootmgr -b # -B #
 
 Be careful doing this as this can mess up booting from EFI-bios, be sure to know what you are doing.
 
+### Activating windows
+
+use this lmao, like the name; just scroll down the KMS Activiator and download 7zip, follow the directions.
+
+https://rentry.co/windows_for_retards
+
+https://pastebin.com/cpdmr6HZ KMS
+
 ### SHOUTOUT TO RisingPrism GITLAB FOR SCRIPTS & IDEA: 
 
 https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home.
