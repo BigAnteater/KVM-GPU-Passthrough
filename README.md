@@ -160,6 +160,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
       <hidden state="on"/>
     </kvm>
     <vmport state="off"/>
+    <ioapic driver="kvm"/>
   </features>
   <cpu mode="host-passthrough" check="none" migratable="on">
     <topology sockets="1" dies="1" cores="2" threads="2"/>
