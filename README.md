@@ -59,7 +59,7 @@ To configure libvirt run my script which configures libvirt and QEMU for you by 
 
 ### Creating your rom
 
-To create a rom you would need to download the following tools in a windows machine (dualboot)
+To create a rom you would need to download the following tools in a windows machine (dualboot), if you are dualbooting from windows be sure to create a backup with cloning software i personally use acronis but you can use clonezilla if that's a thing; just be sure you have an addtional hard drive around and that drive has enough space all partitions.
 
 1) Gpu-Z
 
