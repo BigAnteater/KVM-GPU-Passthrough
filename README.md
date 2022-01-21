@@ -186,11 +186,12 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
     <timer name="hypervclock" present="yes"/>
   </clock>
 ```
- 
-and for the sake of it, here's a windows 11 example, do not copy paste.
-  
+
+  <details><summary>and for the sake of it, here's a windows 11 example, do not copy paste.</summary>
+<p>
+
 ```
-  <domain type="kvm">
+    <domain type="kvm">
   <name>win11</name>
   <uuid>1ef73810-849a-4a4e-84be-30f90332e603</uuid>
   <metadata>
@@ -400,8 +401,11 @@ and for the sake of it, here's a windows 11 example, do not copy paste.
     </memballoon>
   </devices>
 </domain>
-
+  
 ```
+
+</p>
+</details>
 
 ### notice the sata connections?
 
