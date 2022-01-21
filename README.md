@@ -47,10 +47,13 @@ To configure libvirt run my script which configures libvirt and QEMU for you by 
 5) Name the Virtual Machine Win10, and tick the box which says customize configuration before install.
 6) Make sure your firmware is set to OVMF_CODE.fd, because you need the special UEFI firmware for the VM to boot properly.
 ![Screen Capture_virt-manager_20211203210303](https://user-images.githubusercontent.com/77298458/144697907-4a5b9099-9415-45df-8a3c-a44274dde6e6.png)
+
 7) Then go into the CPU options and change it so that it looks like the picture below. Change the ammount of cores to however many CPU cores you want, and make sure to set the threads ammount to 2 because it will give 2 threads to every 1 core.
 ![Screen Capture_virt-manager_20211203210507](https://user-images.githubusercontent.com/77298458/144697973-239be762-9928-4b9e-a475-9f5ed9bb112a.png)
+
 8) Lastly, go into your boot settings and make sure that your optical disk is checked.
 ![Screen Capture_virt-manager_20211203210927](https://user-images.githubusercontent.com/77298458/144698047-39cfddde-aa28-4d4c-8f0b-bff81a5c21ca.png)
+
 9) And then you should be able to click begin installation!
 10) After you finish installing windows, you should be good to shut down the VM and follow along with the next steps.
 
@@ -87,14 +90,22 @@ just simply follow the instructions on how to save the vbios in linux, do not wr
 ### Patching your ROM
 
 1) Go to https://www.techpowerup.com/vgabios/ and download the ROM of your ***exact*** GPU (or do some google-fu).
+  
 ![Screen Capture_select-area_20211203200439](https://user-images.githubusercontent.com/77298458/144696258-5a424e34-236a-4e20-adf7-723068707712.png)
+  
 2) Once you have your rom downloaded, type in ``sudo pacman -S bless`` to download the hex editor to patch your rom.
+  
 3) Open your ROM with the Bless hex editor, and as muta says: "This is where the real arcane s#!% happens."
+  
 4) Press CTRL + F to search, and search for "VIDEO" as text.
+  
 ![Screen Capture_select-area_20211203201054](https://user-images.githubusercontent.com/77298458/144696438-6e7afb3e-b808-4bc7-a0be-8683c046f445.png)
 5) Then, delete everything before the "U.s" or "U.y" or whatever, and save your ROM as something simple (i.e: patch.rom).
+  
 ![Screen Capture_select-area_20211203201250](https://user-images.githubusercontent.com/77298458/144696539-44ce50f6-c6fd-4d2d-9564-3be3fd663585.png)
+  
 6) Once your ROM has been patched, open your terminal in the folder which you have your ROM saved in, and type in ``sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios`` and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
+  
 7) Then your ROM should be all patched and good to go!
 
 ### Hook Scripts
@@ -102,7 +113,9 @@ just simply follow the instructions on how to save the vbios in linux, do not wr
 This is an amazing hook script made by @risingprismtv on gitlab. What this script does is stop your display manager service and all of your running programs, and unhooks your graphics card off of Linux and rehooks it onto the Windows VM.
 
 1) Clone Risngprism's single GPU passthrough gitlab page: ``git clone https://gitlab.com/risingprismtv/single-gpu-passthrough && cd single-gpu-passthrough``.
+  
 2) Run the install script as sudo: ``sudo ./install-hooks.sh``.
+  
 3) The scripts will successfully install into their required places without issue!
 
 ### Adding your GPU and USB devices to the VM
@@ -110,6 +123,7 @@ This is an amazing hook script made by @risingprismtv on gitlab. What this scrip
 For the VM to actually pass the gpu, you need to add the PCI device to your VM. Here is how to do so.
 
 *Before we edit pass through our GPU, make sure to enable XML editing.*
+  
 ![Screen Capture_virt-manager_20211204070245](https://user-images.githubusercontent.com/77298458/144714348-ef5a9437-624e-41f7-b94f-9889722c993a.png)
 
 
@@ -399,11 +413,20 @@ you can find info about this using sudo fdisk -l
 This is usefull for people who want to name their VMs to something other than win10.
 
 1) Edit the hooks script by typing ``sudo nano /etc/libvirt/hooks/qemu``
+
 2) On the line with the if then statement, add in ``|| [[ $OBJECT == "RENAME TO YOUR VM" ]]`` before the ;.
+
 ![Screen Capture_select-area_20211204074514](https://user-images.githubusercontent.com/77298458/144715662-f66088d0-d0b7-44f7-a515-2df7419af11e.png)
+
 3) Now you should be good to turn on your VM! On Windows drivers will auto install.
 
 
-### SHOUTOUT TO RisingPrism GITLAB FOR SCRIPTS & IDEA: https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home. SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE: https://youtu.be/BUSrdUoedTo. https://github.com/pavolelsig/Ubuntu_GVT-g_helper/blob/master/part_1.sh FOR MAKING GRUB SHELL SCRIPT (I changed it to work for arch).
+### SHOUTOUT TO RisingPrism GITLAB FOR SCRIPTS & IDEA: 
+
+https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home.
+
+SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE: https://youtu.be/BUSrdUoedTo. 
+
+https://github.com/pavolelsig/Ubuntu_GVT-g_helper/blob/master/part_1.sh FOR MAKING GRUB SHELL SCRIPT (I changed it to work for arch).
 
 ### Also thank you for choosing my guide! it took a lot of time to complete the scripts and readme. Multiple hairs were torn out in the making.
