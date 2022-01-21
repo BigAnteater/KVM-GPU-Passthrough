@@ -424,6 +424,22 @@ This is usefull for people who want to name their VMs to something other than wi
 
 3) Now you should be good to turn on your VM! On Windows drivers will auto install.
 
+### after all is done and you dual-boot
+
+If you want to use gparted to delete the ntfs volume, recovery volume; anything microsoft (except the efi-partitons, unless if that's mounted somewhere else in linux), when finished delete the bios options to boot from windows with efibootmgr
+
+view entries with efibootmgr:
+'''
+efibootmgr -v
+'''
+
+then delete the entry with
+
+'''
+efibootmgr -b # -B #
+'''
+
+Be careful doing this as this can mess up booting from EFI-bios, be sure to know what you are doing.
 
 ### SHOUTOUT TO RisingPrism GITLAB FOR SCRIPTS & IDEA: 
 
