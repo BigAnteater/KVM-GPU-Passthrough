@@ -86,7 +86,7 @@ just simply follow the instructions on how to save the vbios in linux, do not wr
 
 ### Patching your ROM
 
-1) Go to https://www.techpowerup.com/vgabios/ and download the ROM of your ***exact*** GPU.
+1) Go to https://www.techpowerup.com/vgabios/ and download the ROM of your ***exact*** GPU (or do some google-fu).
 ![Screen Capture_select-area_20211203200439](https://user-images.githubusercontent.com/77298458/144696258-5a424e34-236a-4e20-adf7-723068707712.png)
 2) Once you have your rom downloaded, type in ``sudo pacman -S bless`` to download the hex editor to patch your rom.
 3) Open your ROM with the Bless hex editor, and as muta says: "This is where the real arcane s#!% happens."
@@ -114,16 +114,34 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 
 
 
-1) Add every PCI device which has to do with your graphics card to the VM.
-![Screen Capture_select-area_20211204064804](https://user-images.githubusercontent.com/77298458/144713848-a7918b97-5e1c-4961-b9ec-a9fc1259d777.png)
-2) Pass through your audio device and your USB controller. It will look like this for me
+
+  1) Add every PCI device which has to do with your graphics card to the VM.
+
+  ![Screen Capture_select-area_20211204064804](https://user-images.githubusercontent.com/77298458/144713848-a7918b97-5e1c-4961-b9ec-a9fc1259d777.png)
+
+  2) Pass through your audio device and your USB controller.
+
+  3) usb redirect any usb devices that are having issues, i would redirect your headset for headset users and the mouse.
+  add hardware > usb host device > the desired device
+  
+![oU1II4D](https://user-images.githubusercontent.com/68661602/150458011-ba7da45d-dfd9-41fe-a7e4-901a2aa0c433.png)
+
 ![Screen Capture_virt-manager_20211204065241](https://user-images.githubusercontent.com/77298458/144714016-bf504808-f7ff-4a2f-b533-540d596e794c.png)
-3) Remember the ROM we patched? Well we're gonna use it now. 
-4) Edit the XML of each passed through PCI device that has to do with your GPU and add the line ``<rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. Make sure to rename ROMFILE to what you named your ROM.
-![Screen Capture_virt-manager_20211204071027](https://user-images.githubusercontent.com/77298458/144714606-ac7d7cfe-b567-492a-a863-08557a58b5c8.png)
-5) Lastly, remove every spice/qxl device from your virtual machine
-![Screen Capture_virt-manager_20211204071816](https://user-images.githubusercontent.com/77298458/144714841-974cdf8e-57ef-448f-ae2a-cd45809ddae2.png)
-6) If you are using an NVIDIA graphics card, add these lines to your XML overview. Also this could be used to hide your VM, be sure to turn ON hyper-v in windows features.
+
+  4) Remember the ROM we patched? Well we're gonna use it now. 
+
+  5) Edit the XML of each passed through PCI device that has to do with your GPU and add the line ``<rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. Make sure to rename ROMFILE to what you named your ROM.
+
+  ![Screen Capture_virt-manager_20211204071027](https://user-images.githubusercontent.com/77298458/144714606-ac7d7cfe-b567-492a-a863-08557a58b5c8.png)
+
+  6) Lastly, remove every spice/qxl device from your virtual machine
+
+  ![Screen Capture_virt-manager_20211204071816](https://user-images.githubusercontent.com/77298458/144714841-974cdf8e-57ef-448f-ae2a-cd45809ddae2.png)
+
+  7) If you are using an NVIDIA graphics card, add these lines to your XML overview. Also this could be used to hide your VM, be sure to turn ON hyper-v in windows features.
+  
+  ![Ic8UR0g](https://user-images.githubusercontent.com/68661602/150457603-8bb1662e-ba13-4a07-baad-7666bebb6088.png)
+  
 ```
   </os>
   <features>
