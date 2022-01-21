@@ -426,7 +426,7 @@ This is usefull for people who want to name their VMs to something other than wi
 
 ### after all is done and you dual-boot
 
-If you want to use gparted to delete the ntfs volume, recovery volume; anything microsoft (except the efi-partitons, unless if that's mounted somewhere else in linux), when finished delete the bios options to boot from windows with efibootmgr
+If you want use gparted to delete the ntfs volume, recovery volume; anything microsoft (except the efi-partitons, unless if that's mounted somewhere else in linux, don't touch the linux partitions), when finished delete the bios options to boot from windows with efibootmgr; be sure to resize the disk accordingly.
 
 view entries with efibootmgr:
 ```
