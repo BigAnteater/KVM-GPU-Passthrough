@@ -62,11 +62,9 @@ To create a rom you would need to download the following tools in a windows mach
 
 Download GPU-Z here at https://www.techpowerup.com/gpuz/
 
-click on what has been circled and click write to file, it will save it as a rom; be sure to save it to where arch has access to it otherwise you will have to create a mount point.
+click on what has been circled and click write to file, it will save it as a rom; be sure to save it to where arch has access to it otherwise you will have to create a mount point. For AMD users the process should be the same.
 
 ![SavingBios](https://user-images.githubusercontent.com/68661602/150429190-1fa45b23-c6b0-4a4b-9d32-ed4f98c453d8.png)
-
-#### For AMD users the process should be the same.
 
 ### Viewing VBios from arch
 
