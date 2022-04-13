@@ -444,7 +444,7 @@ Be careful doing this as this can mess up booting from EFI-bios, be sure to know
 
 ### Activating windows
 
-use this lmao, like the name; just scroll down the KMS Activiator and download 7zip, follow the directions.
+use this just scroll down the KMS Activiator and download 7zip, follow the directions.
 
 https://rentry.co/windows_for_retards
 
