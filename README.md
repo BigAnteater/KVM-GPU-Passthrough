@@ -8,14 +8,14 @@ To prepare, make sure you have virtualization enabled in your BIOS.
 
 For AMD this could be done by enabling
 
-  • IOMMU
-  • NX Mode
-  • SVM Mode
+• IOMMU
+• NX Mode
+• SVM Mode
 
 For you lame Intel users, just enable
 
-  • VT-d
-  • VT-x
+• VT-d
+• VT-x
 
 And then clone the repository by typing:
 
