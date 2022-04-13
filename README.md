@@ -14,8 +14,8 @@ For AMD this could be done by enabling
 
 For you lame Intel users, just enable
 
-• VT-d
-• VT-x
+• VT-d </br>
+• VT-x </br>
 
 And then clone the repository by typing:
 
