@@ -8,9 +8,9 @@ To prepare, make sure you have virtualization enabled in your BIOS.
 
 For AMD this could be done by enabling
 
-• IOMMU
-• NX Mode
-• SVM Mode
+• IOMMU </br>
+• NX Mode </br>
+• SVM Mode </br>
 
 For you lame Intel users, just enable
 
