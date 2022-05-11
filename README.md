@@ -462,4 +462,6 @@ use this just scroll down the [KMS Activiator](https://rentry.co/windows_for_ret
 
 ### For more info on virt-manager; please refer to this guide from [redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/index).
 
+### [efibootmgr, just a man page](https://linux.die.net/man/8/efibootmgr).
+
 ### Also thank you for choosing my guide! it took a lot of time to complete the scripts and readme. Multiple hairs were torn out in the making.
