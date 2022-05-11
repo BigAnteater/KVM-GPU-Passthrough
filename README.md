@@ -19,9 +19,7 @@ For you lame Intel users, just enable
 
 And then clone the repository by typing:
 
-```
-git clone https://github.com/BigAnteater/KVM-GPU-Passthrough/ && cd KVM-GPU-Passthrough
-```
+``git clone https://github.com/BigAnteater/KVM-GPU-Passthrough/ && cd KVM-GPU-Passthrough``
 
 And then you should be good to go.
 
@@ -153,7 +151,13 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
   7) If you are using an NVIDIA graphics card, add these lines to your XML overview. Also this could be used to hide your VM so I would go ahead an add anyway, be sure to turn ON hyper-v in windows features.
   
   ![Ic8UR0g](https://user-images.githubusercontent.com/68661602/150457603-8bb1662e-ba13-4a07-baad-7666bebb6088.png)
-  
+  <br/>
+  <br/>
+  ### The clock
+  for clock offset, you can either use windows localtime or linux UTC; if you're having issues with localtime set the <br>
+	offset of the clock to UTC and vise versa. more info found [Here](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/sect-virtualization-tips_and_tricks-libvirt_managed_timers) 
+   <br/>
+     <br/> 
 ```
   </os>
   <features>
@@ -442,20 +446,20 @@ efibootmgr -b # -B #
 
 Be careful doing this as this can mess up booting from EFI-bios, be sure to know what you are doing.
 
-### Activating windows
+## Activating windows
 
-use this just scroll down the KMS Activiator and download 7zip, follow the directions.
+use this just scroll down the [KMS Activiator](https://rentry.co/windows_for_retards) and [download 7zip](https://www.7-zip.org/download.html), follow the directions.
 
-https://rentry.co/windows_for_retards
+[The KMS 7zip file](https://pastebin.com/cpdmr6HZ)
 
-https://pastebin.com/cpdmr6HZ KMS
+# EoF:
 
-### SHOUTOUT TO RisingPrism GITLAB FOR SCRIPTS & IDEA: 
+### [SHOUTOUT TO RisingPrism](https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home)
 
-https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home.
+### [SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE:](https://youtu.be/BUSrdUoedTo) 
 
-SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE: https://youtu.be/BUSrdUoedTo. 
+### [pavolelsig](https://github.com/pavolelsig/Ubuntu_GVT-g_helper/blob/master/part_1.sh) FOR MAKING GRUB SHELL SCRIPT (I changed it to work for arch).
 
-https://github.com/pavolelsig/Ubuntu_GVT-g_helper/blob/master/part_1.sh FOR MAKING GRUB SHELL SCRIPT (I changed it to work for arch).
+### For more info on virt-manager; please refer to this guide from [redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/index).
 
 ### Also thank you for choosing my guide! it took a lot of time to complete the scripts and readme. Multiple hairs were torn out in the making.
