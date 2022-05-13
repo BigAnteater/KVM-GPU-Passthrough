@@ -476,4 +476,4 @@ bios search util: https://www.techpowerup.com/vgabios/ <br/>
 AMD bios util: https://andrealmeid.com/post/2020-05-01-vbios2/ <br/>
 Nvidia bios util: https://www.techpowerup.com/gpuz/ 
 
-### Also thank you for choosing my guide! it took a lot of time to complete the scripts and readme. Multiple hairs were torn out in the making.
+### Also thank you for choosing my guide! it took a lot of time to complete the scripts and readme. Multiple hairs were torn out in the making; enjoy some [BB](https://www.youtube.com/watch?v=FLlDt_4EGX4)
