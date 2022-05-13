@@ -101,7 +101,8 @@ just simply follow the instructions on how to save the vbios in linux, do not wr
 ![Screen Capture_select-area_20211203201250](https://user-images.githubusercontent.com/77298458/144696539-44ce50f6-c6fd-4d2d-9564-3be3fd663585.png)
   
 6) Once your ROM has been patched, open your terminal in the folder which you have your ROM saved in, and type in <br/>
-``sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios`` and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
+``sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios`` <br/> 
+and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
   
 7) Then your ROM should be all patched and good to go!
 
@@ -109,7 +110,8 @@ just simply follow the instructions on how to save the vbios in linux, do not wr
 
 This is an amazing hook script made by @risingprismtv on gitlab. What this script does is stop your display manager service and all of your running programs, and unhooks your graphics card off of Linux and rehooks it onto the Windows VM.
 
-1) Clone Risngprism's single GPU passthrough gitlab page: ``git clone https://gitlab.com/risingprismtv/single-gpu-passthrough && cd single-gpu-passthrough``.
+1) Clone Risngprism's single GPU passthrough gitlab page: 
+<br/> ``git clone https://gitlab.com/risingprismtv/single-gpu-passthrough && cd single-gpu-passthrough``.
   
 2) Run the install script as sudo: ``sudo ./install-hooks.sh``.
   
@@ -141,7 +143,9 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 
   4) Remember the ROM we patched? Well we're gonna use it now. 
 
-  5) Edit the XML of each passed through PCI device that has to do with your GPU and add the line ``<rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. Make sure to rename ROMFILE to what you named your ROM.
+  5) Edit the XML of each passed through PCI device that has to do with your GPU and add the line 
+  <br/> ``<rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. <br/>
+  Make sure to rename ROMFILE to what you named your ROM.
 
   ![Screen Capture_virt-manager_20211204071027](https://user-images.githubusercontent.com/77298458/144714606-ac7d7cfe-b567-492a-a863-08557a58b5c8.png)
 
@@ -424,7 +428,7 @@ This is usefull for people who want to name their VMs to something other than wi
 
 1) Edit the hooks script by typing ``sudo nano /etc/libvirt/hooks/qemu``
 
-2) On the line with the if then statement, add in ``|| [[ $OBJECT == "RENAME TO YOUR VM" ]]`` before the ;.
+2) On the line with the if then statement, add in ``|| [[ $OBJECT == "RENAME TO YOUR VM" ]]`` before the ``;``.
 
 ![Screen Capture_select-area_20211204074514](https://user-images.githubusercontent.com/77298458/144715662-f66088d0-d0b7-44f7-a515-2df7419af11e.png)
 
