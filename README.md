@@ -461,7 +461,7 @@ use this just scroll down the [KMS Activiator](https://rentry.co/windows_for_ret
 
 ### [SHOUTOUT TO RisingPrism](https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home)
 
-### [SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE:](https://youtu.be/BUSrdUoedTo) 
+### [SHOUTOUT TO SomeOrdinaryGamers FOR SOME ASPECTS OF THE GUIDE](https://youtu.be/BUSrdUoedTo) 
 
 ### [pavolelsig](https://github.com/pavolelsig/Ubuntu_GVT-g_helper/blob/master/part_1.sh) FOR MAKING GRUB SHELL SCRIPT (I changed it to work for arch).
 
