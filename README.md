@@ -71,9 +71,9 @@ To view the vbios from arch you will simply need to install nvida-settings for n
 
 ![FahGRWf](https://user-images.githubusercontent.com/68661602/150429338-c041e1c9-3f23-4bd8-ab5a-3570580a03bf.png)
 
-then do some google-fu site:techpowerup.com  <vbios goes here>
+then do some google-fu ``site:techpowerup.com  <vbios goes here>``
   
-  Example site:techpowerup.com 86.04.99.00.06
+  Example ``site:techpowerup.com 86.04.99.00.06``
 
 ### AMD Users
 
