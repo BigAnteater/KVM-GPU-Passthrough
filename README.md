@@ -4,6 +4,8 @@
 
 ### Preparations
 
+[for a better / more verbose guide on which linux to use; watch this vid from SOG here](https://youtu.be/d12aGhsjBlo?t=447)
+
 To prepare, make sure you have virtualization enabled in your BIOS.
 
 For AMD this could be done by enabling
