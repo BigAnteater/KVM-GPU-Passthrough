@@ -172,7 +172,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 
 These would be used for a Hard Drive pass though, basically handing off your hard drive to the vm.
 the process is the same as usb-host, just add the hard drive by selecting storage than manage and the path, usually it starts with /dev/sxx; a good example is /dev/sdc
-you can find info about this using sudo fdisk -l
+you can find info about this using sudo fdisk -l, I would be careful about handing off hard drives this way and to not edit the xml docs, just boot up virt-manager and remove the hard drive, DO NOT DELETE WHEN ASKED; just remove the storage device.
 
 ### Editing hooks
 This is usefull for people who want to name their VMs to something other than win10.
