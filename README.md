@@ -477,5 +477,6 @@ Windows 10 ISO: https://www.microsoft.com/en-us/software-download/windows10ISO <
 bios search util: https://www.techpowerup.com/vgabios/ <br/>
 AMD bios util: https://andrealmeid.com/post/2020-05-01-vbios2/ <br/>
 Nvidia bios util: https://www.techpowerup.com/gpuz/ 
+for a better / more verbose guide on which linux to use; watch this vid from SOG here: https://youtu.be/d12aGhsjBlo?t=447
 
-### Also thank you for choosing my guide! it took a lot of time to tidying up the readme. enjoy some [BB](https://www.youtube.com/watch?v=FLlDt_4EGX4)
+### Also thank you for choosing my guide! it took a lot of time to tidying up the readme. <br/> enjoy some [BB](https://www.youtube.com/watch?v=FLlDt_4EGX4)
