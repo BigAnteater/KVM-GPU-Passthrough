@@ -21,7 +21,7 @@ For you lame Intel users, just enable
 
 And then clone the repository by typing:
 
-``git clone https://github.com/BigAnteater/KVM-GPU-Passthrough/ && cd KVM-GPU-Passthrough``
+    git clone https://github.com/BigAnteater/KVM-GPU-Passthrough/ && cd KVM-GPU-Passthrough
 
 And then you should be good to go.
 
