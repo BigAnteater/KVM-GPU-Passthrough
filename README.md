@@ -103,7 +103,9 @@ just simply follow the instructions on how to save the vbios in linux, do not wr
 ![Screen Capture_select-area_20211203201250](https://user-images.githubusercontent.com/77298458/144696539-44ce50f6-c6fd-4d2d-9564-3be3fd663585.png)
  
 6) Once your ROM has been patched, open your terminal in the folder which you have your ROM saved in, and type in <br/>
-``sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios`` <br/> 
+
+	   sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios
+
 and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
   
 7) Then your ROM should be all patched and good to go!
@@ -160,13 +162,61 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
   ![Ic8UR0g](https://user-images.githubusercontent.com/68661602/150457603-8bb1662e-ba13-4a07-baad-7666bebb6088.png)
   <br/>
   <br/>
-  ### The clock
-  for clock offset, you can either use windows localtime or linux UTC; if you're having issues with localtime set the <br>
-	offset of the clock to UTC and vise versa. more info found [Here](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/sect-virtualization-tips_and_tricks-libvirt_managed_timers) 
+  ### The clock and Hyper-v mode
+
+	   </os>
+	   <features>
+	   <acpi/>
+	   <apic/>
+	   <hyperv mode="custom">
+	   <relaxed state="on"/>
+	   <vapic state="on"/>
+	   <spinlocks state="on" retries="8191"/>
+	   <vpindex state="on"/>
+	   <runtime state="on"/>
+	   <synic state="on"/>
+	   <reset state="on"/>
+	   </hyperv>
+	   <kvm>
+	   <hidden state="on"/>
+	   </kvm>
+	   <vmport state="off"/>
+	   <ioapic driver="kvm"/>
+	   </features>
+	   <cpu mode="host-passthrough" check="none" migratable="on">
+	   <topology sockets="1" dies="1" cores="2" threads="2"/>
+	   </cpu>
+	   <clock offset="localtime">
+	   <timer name="rtc" tickpolicy="catchup"/>
+	   <timer name="pit" tickpolicy="delay"/>
+	   <timer name="hpet" present="no"/>
+	   <timer name="hypervclock" present="yes"/>
+	   </clock>
 	
-[and here's an example for clocks and hyper-v](https://raw.githubusercontent.com/Nthompson096/KVM-GPU-Passthrough/main/clock-hyper-v.xml)
+  for clock offset, you can either use windows localtime or linux UTC; if you're having issues with localtime set the <br>
+	offset of the clock to UTC and vise versa. more info found [Here](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/sect-virtualization-tips_and_tricks-libvirt_managed_timers)
 
 [and for the sake of it, here's a windows 11 example, do not copy paste.](https://raw.githubusercontent.com/Nthompson096/KVM-GPU-Passthrough/main/do-not-copy-paste.xml)
+
+## I want to change my smbios.
+
+	<sysinfo type="smbios">
+	<bios>
+	<entry name="vendor">Fake BIOS Vendor</entry>
+	<entry name="version">Fake BIOS Version</entry>
+	</bios>
+	<system>
+	<entry name="manufacturer">Fake Manufacturer</entry>
+	<entry name="product">Fake Product</entry>
+	</system>
+	</sysinfo>
+	<!-- other XML nodes -->
+	<os>
+	<!-- other XML nodes -->
+	<smbios mode="sysinfo"/>
+	</os>
+	
+More info can be found out on this; [here](https://libvirt.org/formatdomain.html#smbios-system-information).
 
 ### notice the sata connections?
 
