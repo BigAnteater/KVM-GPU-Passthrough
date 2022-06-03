@@ -30,12 +30,25 @@ And then you should be good to go.
 Preparing GRUB is very simple. Just follow these instructions.
 
 1) Mark the script as executable: for AMD: ``chmod +x grub_setup_amd.sh`` for Intel: ``chmod +x grub_setup_intel.sh``.
-2) Then run the script: AMD: ``sudo ./grub_setup_amd.sh`` Intel: ``sudo ./grub_setup_intel.sh``.
-3) Then just follow the instructions in script!
+2) Then run either of these scripts:	
+3) AMD: 
+
+		sudo ./grub_setup_amd.sh Intel: 
+
+
+4) Intel: 
+
+		sudo ./grub_setup_intel.sh.
+
+
+
+4) Then just follow the instructions in script!
 
 ### Configuring Libvirt
 
-To configure libvirt run my script which configures libvirt and QEMU for you by typing ``sudo ./libvirt_configuration.sh``.
+To configure libvirt run my script which configures libvirt and QEMU for you by typing 
+	
+	sudo ./libvirt_configuration.sh
 
 ### Setting up Virt Manager
 
@@ -115,9 +128,14 @@ and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
 This is an amazing hook script made by @risingprismtv on gitlab. What this script does is stop your display manager service and all of your running programs, and unhooks your graphics card off of Linux and rehooks it onto the Windows VM.
 
 1) Clone Risngprism's single GPU passthrough gitlab page: 
-<br/> ``git clone https://gitlab.com/risingprismtv/single-gpu-passthrough && cd single-gpu-passthrough``.
+
+			
+		git clone https://gitlab.com/risingprismtv/single-gpu-passthrough && cd single-gpu-passthrough.
   
-2) Run the install script as sudo: ``sudo ./install-hooks.sh``.
+
+2) Run the install script as sudo: 
+
+		sudo ./install-hooks.sh.
   
 3) The scripts will successfully install into their required places without issue!
 
@@ -227,7 +245,9 @@ you can find info about this using sudo fdisk -l, I would be careful about handi
 ### Editing hooks
 This is usefull for people who want to name their VMs to something other than win10.
 
-1) Edit the hooks script by typing ``sudo nano /etc/libvirt/hooks/qemu``
+1) Edit the hooks script by typing 
+
+		sudo nano /etc/libvirt/hooks/qemu
 
 2) On the line with the if then statement, add in ``|| [[ $OBJECT == "RENAME TO YOUR VM" ]]`` before the ``;``.
 
@@ -240,15 +260,15 @@ This is usefull for people who want to name their VMs to something other than wi
 If you want use gparted to delete the ntfs volume, recovery volume; anything microsoft (except the efi-partitons, unless if that's mounted somewhere else in linux, don't touch the linux partitions), when finished delete the bios options to boot from windows with efibootmgr; be sure to resize the disk accordingly.
 
 view entries with efibootmgr:
-```
-efibootmgr -v
-```
+
+	efibootmgr -v
+
 
 then delete the entry with
 
-```
-efibootmgr -b # -B #
-```
+
+	efibootmgr -b # -B #
+
 
 Be careful doing this as this can mess up booting from EFI-bios, be sure to know what you are doing.
 
