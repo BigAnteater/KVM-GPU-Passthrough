@@ -61,7 +61,7 @@ To configure libvirt run my script which configures libvirt and QEMU for you by 
 03:00.0 VGA compatible controller: Advanced Micro Devices [AMD] nee ATI RV710 [Radeon HD 4350/4550] (prog-if 00 [VGA controller])
 ```
 1) Run `find /sys/devices -name rom` and ensure the device ID matches.
-For example looking at the case above, you'll want the last part before the `/rom` to be `03:00.0`, so you might see something like this:
+For example looking at the case above, you'll want the last part before the `/rom` to be `03:00.0`, so you might see something like this (the extra `0000:` in front is fine):
 ```
 /sys/devices/pci0000:00/0000:00:01.0/0000:03:00.0/rom
 ```
@@ -73,6 +73,7 @@ mkdir -p /var/lib/libvirt/vbios/
 cat $PATH_TO_ROM > /var/lib/libvirt/vbios/gpu.rom
 echo 0 > $PATH_TO_ROM
 ```
+1) Run `exit` or press Ctrl-D to stop acting as `root`
 
 ### Hook Scripts
 
