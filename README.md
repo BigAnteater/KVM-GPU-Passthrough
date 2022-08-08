@@ -316,7 +316,7 @@ use this just scroll down the [KMS Activiator](https://rentry.co/windows_for_ret
 
 ### [pavolelsig](https://github.com/pavolelsig/Ubuntu_GVT-g_helper/blob/master/part_1.sh) FOR MAKING GRUB SHELL SCRIPT (I changed it to work for arch).
 
-### [Red Dead 2 in Virt-Manager](https://www.reddit.com/r/VFIO/comments/jy8ri4/a_possible_solution_to_red_dead_redemption_2_not/) 
+### [Red Dead 2 in a KVM Virtual Machine](https://www.reddit.com/r/VFIO/comments/jy8ri4/a_possible_solution_to_red_dead_redemption_2_not/) 
 	
 ### For more info on virt-manager; please refer to this guide from [redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/index).
 
