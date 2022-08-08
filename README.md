@@ -213,7 +213,9 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 	   </clock>
 	
   for clock offset, you can either use windows localtime or linux UTC; if you're having issues with localtime set the <br>
-	offset of the clock to UTC and vise versa. more info found [Here](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/sect-virtualization-tips_and_tricks-libvirt_managed_timers)
+  offset of the clock to UTC and vise versa. more info found [Here](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/sect-virtualization-tips_and_tricks-libvirt_managed_timers).
+If you wanted to hide virtualization inside task manager, which wouldn't hurt keep this code as is or remove:
+`<feature policy="disable" name="hypervisor"/>` Under <CPU>
 
 [and for the sake of it, here's a windows 11 example, do not copy paste.](https://raw.githubusercontent.com/Nthompson096/KVM-GPU-Passthrough/main/do-not-copy-paste.xml)
 
