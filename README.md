@@ -251,14 +251,12 @@ The first part which is the domain
 	
 The Emulator Path, edit accordingly.
 	
-	...
 	<pm>
     	<suspend-to-mem enabled="no"/>
     	<suspend-to-disk enabled="no"/>
   	</pm>
   	<devices>
     	<emulator>/path/to/qemu-system-x86_64-pass</emulator>
-    	...
 	
 And the QEMU Command Line
 	
