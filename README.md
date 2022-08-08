@@ -273,6 +273,9 @@ And the QEMU Command Line
     	<qemu:arg value="type=17,manufacturer=Micron"/>
   	</qemu:commandline>
 	
+
+You can use other manufacturers such as gigabyte, asus, etc; if you want to reflect on your physical motherboard be sure to look at the specs at the website of the manufacturer, usually found at the motherboards website (usually it's the CPU and stuff) after pulling up `sudo dmidecode -t 2` and `lspci` for the semiconductor info and serial number, cannot find the serial number? Then it shouldn't matter much and you can use the value provided or open her up (welcome to the real world) and look for a sticker.
+	
 You also need to patch the binary of qemu-system-x86_64, you can cp the file inside a new dir from /usr/bin/qemu-system-x86_64 to a new file such as /home/<username>/patch/qemu/qemu-system-x86_64, or you may keep it inside it's current directory with a new name such as the one listed above for safe keeping; be sure to run sudo.
 
 Here is the shell command, save the script and run the script if you are running it inside /usr/bin as sudo, otherwise save it to where you copied the emulator; edit the values when needed.
