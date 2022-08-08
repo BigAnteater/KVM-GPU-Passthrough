@@ -260,10 +260,10 @@ you can find info about this using sudo fdisk -l, I would be careful about handi
     	<qemu:arg value='-smbios'/>
     	<qemu:arg value='type=17,manufacturer=Micron'/>
 	
-You also need to patch the binary of qemu-system-x86_64, you can cp the file inside a new dir from /usr/bin/qemu-system-x86_64 to a new file such as /home/<username>/patch/qemu/qemu-system-x86_64, or you may keep it inside it's current directory with a new name such as the one listed above for safe keeping.
+You also need to patch the binary of qemu-system-x86_64, you can cp the file inside a new dir from /usr/bin/qemu-system-x86_64 to a new file such as /home/<username>/patch/qemu/qemu-system-x86_64, or you may keep it inside it's current directory with a new name such as the one listed above for safe keeping; be sure to run sudo.
 
-Here is the shell command, save it as a shell script inside the dir where the newly copied qemu system is saved; edit the values when needed.
-Also be sure to chmod +x binary as an executable.
+Here is the shell command, save the script and run the script if you are running it inside /usr/bin, otherwise safe it where you copied the emulator; edit the values when needed.
+Also be sure to chmod +x binary as an executable as sudo.
 
 	#!/bin/bash
 
