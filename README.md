@@ -242,6 +242,36 @@ These would be used for a Hard Drive pass though, basically handing off your har
 the process is the same as usb-host, just add the hard drive by selecting storage than manage and the path, usually it starts with /dev/sxx; a good example is /dev/sdc
 you can find info about this using sudo fdisk -l, I would be careful about handing off hard drives this way and to not edit the xml docs, just boot up virt-manager and remove the hard drive, DO NOT DELETE WHEN ASKED; just remove the storage device.
 
+## For people having issues with games such as red dead 2 Enter this value here inside the XML document for your new/current VM:
+
+	<domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
+	...
+	<pm>
+    	<suspend-to-mem enabled="no"/>
+    	<suspend-to-disk enabled="no"/>
+  	</pm>
+  	<devices>
+    	<emulator>/path/to/qemu-system-x86_64-pass</emulator>
+    	...
+	<qemu:arg value='-smbios'/>
+    	<qemu:arg value='type=2,manufacturer=ASRock,product=X470 Taichi,version=AM4,serial=S4M88119'/>
+    	<qemu:arg value='-smbios'/>
+    	<qemu:arg value='type=4,manufacturer=AMD,version=1000'/>
+    	<qemu:arg value='-smbios'/>
+    	<qemu:arg value='type=17,manufacturer=Micron'/>
+	
+You also need to patch the binary of qemu-system-x86_64, you can cp the file inside a new dir from /usr/bin/qemu-system-x86_64 to a new file such as /home/<username>/patch/qemu/qemu-system-x86_64, or you may keep it inside it's current directory with a new name such as the one listed above for safe keeping.
+
+Here is the shell command, save it as a shell script inside the dir where the newly copied qemu system is saved; edit the values when needed.
+Also be sure to chmod +x binary as an executable.
+
+	#!/bin/bash
+
+	hexdump -ve '1/1 "%.2x"' ./qemu-system-x86_64 |
+	sed -e 's/424f4348/434f4348/g' -e 's/42585043/44585043/g' |
+	xxd -r -p > ./qemu-system-x86_64-pass
+    
+
 ### Editing hooks
 This is usefull for people who want to name their VMs to something other than win10.
 
@@ -295,7 +325,7 @@ use this just scroll down the [KMS Activiator](https://rentry.co/windows_for_ret
 Windows 10 ISO: https://www.microsoft.com/en-us/software-download/windows10ISO <br/>
 bios search util: https://www.techpowerup.com/vgabios/ <br/>
 AMD bios util: https://andrealmeid.com/post/2020-05-01-vbios2/ <br/>
-Nvidia bios util: https://www.techpowerup.com/gpuz/ 
+Nvidia bios util: https://www.techpowerup.com/gpuz/ <br/>
 for a better / more verbose guide on which linux to use; watch this vid from SOG here: https://youtu.be/d12aGhsjBlo?t=447
 
 ### Also thank you for choosing my guide! it took a lot of time to tidying up the readme. <br/> enjoy some [BB](https://www.youtube.com/watch?v=FLlDt_4EGX4)
