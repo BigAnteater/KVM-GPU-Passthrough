@@ -282,12 +282,11 @@ Here is the shell command, save the script and run the script if you are running
 Also be sure to chmod +x binary as an executable as sudo.
 
 	#!/bin/bash
-
-		hexdump -ve '1/1 "%.2x"' ./qemu-system-x86_64 |
-		sed -e 's/424f4348/434f4348/g' -e 's/42585043/44585043/g' |
-		xxd -r -p > ./qemu-system-x86_64-pass
+	
+	hexdump -ve '1/1 "%.2x"' ./qemu-system-x86_64 |
+	sed -e 's/424f4348/434f4348/g' -e 's/42585043/44585043/g' |
+	xxd -r -p > ./qemu-system-x86_64-pass
     
-
 ### Editing hooks
 This is usefull for people who want to name their VMs to something other than win10.
 
