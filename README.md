@@ -245,9 +245,12 @@ you can find info about this using sudo fdisk -l, I would be careful about handi
 ## For people having issues with games such as red dead 2 Enter this value here inside the XML document for your new/current VM:
 
 The first part which is the domain
+	
 	<domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
 
+	
 The Emulator Path, edit accordingly.
+	
 	...
 	<pm>
     	<suspend-to-mem enabled="no"/>
@@ -258,6 +261,7 @@ The Emulator Path, edit accordingly.
     	...
 	
 And the QEMU Command Line
+	
 	<qemu:commandline>
    	<qemu:arg value="-smbios"/>
     	<qemu:arg value="type=2,manufacturer=ASRock,product=X470 Taichi,version=AM4,serial=S4M88119"/>
