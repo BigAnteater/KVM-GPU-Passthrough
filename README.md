@@ -253,12 +253,14 @@ you can find info about this using sudo fdisk -l, I would be careful about handi
   	<devices>
     	<emulator>/path/to/qemu-system-x86_64-pass</emulator>
     	...
-	<qemu:arg value='-smbios'/>
-    	<qemu:arg value='type=2,manufacturer=ASRock,product=X470 Taichi,version=AM4,serial=S4M88119'/>
-    	<qemu:arg value='-smbios'/>
-    	<qemu:arg value='type=4,manufacturer=AMD,version=1000'/>
-    	<qemu:arg value='-smbios'/>
-    	<qemu:arg value='type=17,manufacturer=Micron'/>
+	<qemu:commandline>
+   	<qemu:arg value="-smbios"/>
+    	<qemu:arg value="type=2,manufacturer=ASRock,product=X470 Taichi,version=AM4,serial=S4M88119"/>
+    	<qemu:arg value="-smbios"/>
+   	<qemu:arg value="type=4,manufacturer=AMD,version=1000"/>
+    	<qemu:arg value="-smbios"/>
+    	<qemu:arg value="type=17,manufacturer=Micron"/>
+  	</qemu:commandline>
 	
 You also need to patch the binary of qemu-system-x86_64, you can cp the file inside a new dir from /usr/bin/qemu-system-x86_64 to a new file such as /home/<username>/patch/qemu/qemu-system-x86_64, or you may keep it inside it's current directory with a new name such as the one listed above for safe keeping; be sure to run sudo.
 
