@@ -246,21 +246,21 @@ you can find info about this using sudo fdisk -l, I would be careful about handi
 
 The first part which is the domain
 	
-	<domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
+		<domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
 
 Specifically add in this part;
 
-	xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0"
+		xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0"
 
 	
 The Emulator Path, edit accordingly.
 	
-	<pm>
-    	<suspend-to-mem enabled="no"/>
-    	<suspend-to-disk enabled="no"/>
-  	</pm>
-  	<devices>
-    	<emulator>/path/to/qemu-system-x86_64-pass</emulator>
+    <pm>
+    <suspend-to-mem enabled="no"/>
+    <suspend-to-disk enabled="no"/>
+    </pm>
+    <devices>
+    <emulator>/path/to/qemu-system-x86_64-pass</emulator>
 	
 And the QEMU Command Line
 	
@@ -283,9 +283,9 @@ Also be sure to chmod +x binary as an executable as sudo.
 
 	#!/bin/bash
 
-	hexdump -ve '1/1 "%.2x"' ./qemu-system-x86_64 |
-	sed -e 's/424f4348/434f4348/g' -e 's/42585043/44585043/g' |
-	xxd -r -p > ./qemu-system-x86_64-pass
+		hexdump -ve '1/1 "%.2x"' ./qemu-system-x86_64 |
+		sed -e 's/424f4348/434f4348/g' -e 's/42585043/44585043/g' |
+		xxd -r -p > ./qemu-system-x86_64-pass
     
 
 ### Editing hooks
