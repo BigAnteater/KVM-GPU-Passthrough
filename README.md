@@ -316,6 +316,8 @@ use this just scroll down the [KMS Activiator](https://rentry.co/windows_for_ret
 
 ### [pavolelsig](https://github.com/pavolelsig/Ubuntu_GVT-g_helper/blob/master/part_1.sh) FOR MAKING GRUB SHELL SCRIPT (I changed it to work for arch).
 
+### [Red Dead 2 in Virt-Manager](https://www.reddit.com/r/VFIO/comments/jy8ri4/a_possible_solution_to_red_dead_redemption_2_not/) 
+	
 ### For more info on virt-manager; please refer to this guide from [redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/virtualization_administration_guide/index).
 
 ### [efibootmgr, just a man page](https://linux.die.net/man/8/efibootmgr).
@@ -326,6 +328,7 @@ Windows 10 ISO: https://www.microsoft.com/en-us/software-download/windows10ISO <
 bios search util: https://www.techpowerup.com/vgabios/ <br/>
 AMD bios util: https://andrealmeid.com/post/2020-05-01-vbios2/ <br/>
 Nvidia bios util: https://www.techpowerup.com/gpuz/ <br/>
+Red Dead 2 VM Guide: https://www.reddit.com/r/VFIO/comments/jy8ri4/a_possible_solution_to_red_dead_redemption_2_not/
 for a better / more verbose guide on which linux to use; watch this vid from SOG here: https://youtu.be/d12aGhsjBlo?t=447
 
 ### Also thank you for choosing my guide! it took a lot of time to tidying up the readme. <br/> enjoy some [BB](https://www.youtube.com/watch?v=FLlDt_4EGX4)
