@@ -248,6 +248,10 @@ The first part which is the domain
 	
 	<domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
 
+Specifically add in this part;
+
+	xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0"
+
 	
 The Emulator Path, edit accordingly.
 	
