@@ -246,11 +246,11 @@ you can find info about this using sudo fdisk -l, I would be careful about handi
 
 The first part which is the domain
 	
-		<domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
+	<domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
 
 Specifically add in this part;
 
-		xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0"
+	xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0"
 
 	
 The Emulator Path, edit accordingly.
@@ -292,7 +292,7 @@ This is usefull for people who want to name their VMs to something other than wi
 
 1) Edit the hooks script by typing 
 
-		sudo nano /etc/libvirt/hooks/qemu
+	sudo nano /etc/libvirt/hooks/qemu
 
 2) On the line with the if then statement, add in ``|| [[ $OBJECT == "RENAME TO YOUR VM" ]]`` before the ``;``.
 
