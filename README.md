@@ -349,5 +349,5 @@ Nvidia bios util: https://www.techpowerup.com/gpuz/ <br/>
 Red Dead 2 VM Guide: https://www.reddit.com/r/VFIO/comments/jy8ri4/a_possible_solution_to_red_dead_redemption_2_not/
 for a better / more verbose guide on which linux to use; watch this vid from SOG here: https://youtu.be/d12aGhsjBlo?t=447
 
-### Also thank you for choosing my guide/fork! it took a lot of time to tidying up the readme. <br/> enjoy some [BB](https://www.youtube.com/watch?v=FLlDt_4EGX4)
+***Also thank you for choosing my guide/fork! it took a lot of time to tidying up the readme. <br/> enjoy some [BB](https://www.youtube.com/watch?v=FLlDt_4EGX4)***
 ***be sure to star this repo if you ever find this guide useful.***
