@@ -108,7 +108,7 @@ click on what has been circled and click write to file, it will save it as a rom
 
 ### Viewing VBios from arch
 
-To view the vbios from arch you will simply need to install nvida-settings for nvidia users, then on the GPU tab you will be able to view the vbios.
+To view the vbios from arch you will simply need to install nvidia-settings for nvidia users, then on the GPU tab you will be able to view the vbios.
 
 ![FahGRWf](https://user-images.githubusercontent.com/68661602/150429338-c041e1c9-3f23-4bd8-ab5a-3570580a03bf.png)
 
