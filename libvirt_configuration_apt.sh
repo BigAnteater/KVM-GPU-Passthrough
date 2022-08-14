@@ -43,7 +43,7 @@ mv qemu.conf /etc/libvirt append 2>/dev/null
 sleep 1s
 clear
 systemctl restart libvirtd
-mkdir /usr/share/vgabios
+mkdir /usr/share/vgabios 2>/dev/null
 echo "QEMU has been successfully configured!"
 sleep 5s
 exit
