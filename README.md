@@ -55,7 +55,7 @@ for Intel:
 
 To configure libvirt run my script which configures libvirt and QEMU for you by typing 
 	
-	sudo ./libvirt_configuration.sh
+	sudo sh ./libvirt_configuration.sh
 
 ### Setting up Virt Manager
 
