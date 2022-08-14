@@ -19,6 +19,12 @@ For you lame Intel users, just enable
 • VT-d </br>
 • VT-x </br>
 
+***Install the drivers for your linux if your using nvidia:***
+
+If you haven't done so already; you can use this git repo here:
+
+	git clone https://github.com/Scotchman0/NVIDIA_Drivers
+
 And then clone the repository by typing:
 
     git clone https://github.com/BigAnteater/KVM-GPU-Passthrough/ && cd KVM-GPU-Passthrough
