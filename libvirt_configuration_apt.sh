@@ -28,8 +28,8 @@ gpasswd -M $USERNAME kvm
 gpasswd -M $USERNAME libvirt
 sleep 2s
 clear
-#mv libvirtd.conf /etc/libvirt
-#echo "mv libvirtd.conf /etc/libvirt"
+mv libvirtd.conf /etc/libvirt append 2>/dev/null
+echo "mv libvirtd.conf /etc/libvirt"
 sleep 1s
 clear
 echo "libvirt has been successfully configured!"
@@ -38,11 +38,12 @@ clear
 echo "Will ask you if you want to update the old qemu.conf file."
 cp -i /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old
 sleep 1s
-#echo "mv qemu.conf /etc/libvirt"
-#mv qemu.conf /etc/libvirt
+echo "mv qemu.conf /etc/libvirt"
+mv qemu.conf /etc/libvirt append 2>/dev/null
 sleep 1s
 clear
 systemctl restart libvirtd
+mkdir /usr/share/vgabios
 echo "QEMU has been successfully configured!"
 sleep 5s
 exit
