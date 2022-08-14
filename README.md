@@ -27,7 +27,7 @@ If you haven't done so already; you can use this git repo here:
 
 And then clone the repository by typing:
 
-    git clone https://github.com/BigAnteater/KVM-GPU-Passthrough/ && cd KVM-GPU-Passthrough
+    git clone https://github.com/Nthompson096/KVM-GPU-Passthrough.git && cd KVM-GPU-Passthrough
 
 And then you should be good to go.
 
