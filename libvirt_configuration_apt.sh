@@ -7,7 +7,7 @@ if [ $EUID -ne 0 ]
 fi
 echo "This will install and configure libvirt."
 sleep 1s
-apt install libvirt-dev libvirt-doc libvirt-glib-1.0-0 virt-manager qemu-efi qemu qemu-block-extra ovmf vde2 ebtables dnsmasq bridge-utils netcat-openbsd iptables swtpm
+apt install libvirt-dev libvirt-doc libvirt-glib-1.0-0 virt-manager qemu-efi qemu qemu-block-extra ovmf vde2 ebtables dnsmasq bridge-utils netcat-openbsd iptables swtpm qemu-system qemu-system-common
 sleep 1s
 systemctl enable libvirtd
 echo "systemctl enable libvirtd"
