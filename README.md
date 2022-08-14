@@ -33,12 +33,12 @@ Preparing GRUB is very simple. Just follow these instructions.
 2) Then run either of these scripts:	
 3) AMD: 
 
-		sudo ./grub_setup_amd.sh Intel: 
+		sudo ./grub_setup_amd.sh 
 
 
 4) Intel: 
 
-		sudo ./grub_setup_intel.sh.
+		sudo ./grub_setup_intel.sh
 
 
 
