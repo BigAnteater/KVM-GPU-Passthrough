@@ -152,6 +152,8 @@ just simply follow the instructions on how to save the vbios in linux, do not wr
 
 	   sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios
 
+For Ubuntu/Debian Based it should be placed inside `/usr/share/vgabios/`, the config libvirt script for ubuntu should create the dir for you if it doesn't exist, just place it there.
+
 and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
   
 7) Then your ROM should be all patched and good to go!
