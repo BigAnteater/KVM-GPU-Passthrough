@@ -29,9 +29,16 @@ And then you should be good to go.
 
 Preparing GRUB is very simple. Just follow these instructions.
 
-1) Mark the script as executable: for AMD: ``chmod +x grub_setup_amd.sh`` for Intel: ``chmod +x grub_setup_intel.sh``.
-2) Then run either of these scripts:	
-3) AMD: 
+1) Mark the script as executable: for AMD: 
+
+	chmod +x grub_setup_amd.sh 
+
+for Intel: 
+
+	chmod +x grub_setup_intel.sh
+
+3) Then run either of these scripts:	
+4) AMD: 
 
 		sudo ./grub_setup_amd.sh 
 
@@ -42,7 +49,7 @@ Preparing GRUB is very simple. Just follow these instructions.
 
 
 
-4) Then just follow the instructions in script!
+4) Then just follow the instructions in script.
 
 ### Configuring Libvirt
 
