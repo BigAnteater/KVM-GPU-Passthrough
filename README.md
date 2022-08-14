@@ -64,15 +64,15 @@ swtpm will give you issues, it's best to add it in as a PPA and then update via 
 
 For previous 21.10 release you can use a PPA as shown below:
 
-sudo add-apt-repository ppa:thopiekar/swtpm
-sudo apt-get update
-sudo apt-get install swtpm swtpm-tools
+	sudo add-apt-repository ppa:thopiekar/swtpm
+	sudo apt-get update
+	sudo apt-get install swtpm swtpm-tools
 
 For 20.04 LTS, use different PPA as shown below:
 
-sudo add-apt-repository ppa:itrue/swtpm
-sudo apt-get update
-sudo apt-get install swtpm swtpm-tools
+	sudo add-apt-repository ppa:itrue/swtpm
+	sudo apt-get update
+	sudo apt-get install swtpm swtpm-tools
 
 ### Setting up Virt Manager
 
