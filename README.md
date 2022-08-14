@@ -1,6 +1,6 @@
 # Single KVM-GPU-Passthrough
 
-***THIS GUIDE IS MEANT ARCH LINUX USERS***
+***THIS GUIDE IS MEANT LINUX USERS***
 
 ### Preparations
 
