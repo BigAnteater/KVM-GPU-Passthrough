@@ -23,7 +23,7 @@ For you lame Intel users, just enable
 
 If you haven't done so already; you can use this git repo here:
 
-	git clone https://github.com/Scotchman0/NVIDIA_Drivers
+	git clone https://github.com/Scotchman0/NVIDIA_Drivers.git
 
 And then clone the repository by typing:
 
