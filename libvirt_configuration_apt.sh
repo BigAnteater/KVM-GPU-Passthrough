@@ -7,7 +7,7 @@ if [ $EUID -ne 0 ]
 fi
 echo "This will install and configure libvirt."
 sleep 1s
-apt install libvirt libvirt-glib libvirt-python virt-install virt-manager qemu qemu-arch-extra ovmf vde2 ebtables dnsmasq bridge-utils openbsd-netcat iptables swtpm
+apt install libvirt-dev libvirt-doc libvirt-glib-1.0-0 virt-manager qemu-efi qemu qemu-block-extra ovmf vde2 ebtables dnsmasq bridge-utils netcat-openbsd iptables swtpm
 sleep 1s
 systemctl enable libvirtd
 echo "systemctl enable libvirtd"
@@ -16,7 +16,7 @@ systemctl start libvirtd
 echo "systemctl start libvirtd"
 clear
 echo "Now it's time to edit your configs!"
-mv /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old
+cp -i /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old
 echo "mv /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old"
 sleep 1s
 echo "What is your username?"
@@ -28,24 +28,18 @@ gpasswd -M $USERNAME kvm
 gpasswd -M $USERNAME libvirt
 sleep 2s
 clear
-mv libvirtd.conf /etc/libvirt
-echo "mv libvirtd.conf /etc/libvirt"
+#mv libvirtd.conf /etc/libvirt
+#echo "mv libvirtd.conf /etc/libvirt"
 sleep 1s
 clear
 echo "libvirt has been successfully configured!"
 sleep 2s
 clear
-echo "Time for your QEMU configs babe!"
-sleep 2s
-echo
-echo "Yes, honey"
-sleep 3s
-clear
-echo "mv /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old"
-mv /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old
+echo "Will ask you if you want to update the old qemu.conf file."
+cp -i /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old
 sleep 1s
-echo "mv qemu.conf /etc/libvirt"
-mv qemu.conf /etc/libvirt
+#echo "mv qemu.conf /etc/libvirt"
+#mv qemu.conf /etc/libvirt
 sleep 1s
 clear
 systemctl restart libvirtd
