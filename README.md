@@ -53,7 +53,7 @@ for Intel:
 
 ### Configuring Libvirt
 
-To configure libvirt run my script which configures libvirt and QEMU for you by typing 
+To configure libvirt chmod +x the appropriate script for your distro which configures libvirt and QEMU for you by typing 
 	
 	sudo sh ./libvirt_configuration.sh
 
