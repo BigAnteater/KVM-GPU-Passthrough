@@ -75,13 +75,13 @@ For previous 21.10 release you can use a PPA as shown below:
 
 	sudo add-apt-repository ppa:thopiekar/swtpm
 	sudo apt-get update
-	sudo apt-get install swtpm swtpm-tools
+	sudo apt-get install swtpm
 
 For 20.04 LTS, use different PPA as shown below:
 
 	sudo add-apt-repository ppa:itrue/swtpm
 	sudo apt-get update
-	sudo apt-get install swtpm swtpm-tools
+	sudo apt-get install swtpm
 
 ### Setting up Virt Manager
 
