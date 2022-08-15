@@ -16,7 +16,7 @@ systemctl start libvirtd
 echo "systemctl start libvirtd"
 clear
 echo "Now it's time to edit your configs!"
-mv /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old
+cp -i /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old
 echo "mv /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old"
 sleep 1s
 echo "What is your username?"
@@ -42,7 +42,7 @@ echo "Yes, honey"
 sleep 3s
 clear
 echo "mv /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old"
-mv /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old
+cp -i /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old
 sleep 1s
 echo "mv qemu.conf /etc/libvirt"
 mv qemu.conf /etc/libvirt
