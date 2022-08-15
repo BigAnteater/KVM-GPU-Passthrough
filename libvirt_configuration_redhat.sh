@@ -15,8 +15,9 @@ sleep 1s
 systemctl start libvirtd
 echo "systemctl start libvirtd"
 clear
-echo "Will ask to copy your configs"
+echo "Now it's time to edit your configs!"
 cp -i /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old
+echo "mv /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.old"
 sleep 1s
 echo "What is your username?"
 read USERNAME
@@ -32,6 +33,9 @@ echo "mv libvirtd.conf /etc/libvirt"
 sleep 1s
 clear
 echo "libvirt has been successfully configured!"
+sleep 2s
+clear
+echo "Will ask you if you want to update the old qemu.conf file."
 cp -i /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old
 sleep 1s
 echo "mv qemu.conf /etc/libvirt"
@@ -39,6 +43,7 @@ mv qemu.conf /etc/libvirt append 2>/dev/null
 sleep 1s
 clear
 systemctl restart libvirtd
+mkdir /usr/share/vgabios 2>/dev/null
 echo "QEMU has been successfully configured!"
 sleep 5s
 exit
