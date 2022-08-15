@@ -54,6 +54,9 @@ for Intel:
 		sudo ./grub_setup_intel.sh
 
 
+***For Fedora/Redhat users, you will have to run grub2_redhat_setup_amd-efi.sh or grub2_redhat_setup_intel-efi.sh***
+
+
 
 4) Then just follow the instructions in script.
 
