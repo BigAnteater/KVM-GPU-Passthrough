@@ -35,12 +35,6 @@ clear
 echo "libvirt has been successfully configured!"
 sleep 2s
 clear
-echo "Time for your QEMU configs babe!"
-sleep 2s
-echo
-echo "Yes, honey"
-sleep 3s
-clear
 echo "mv /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old"
 cp -i /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old
 sleep 1s
