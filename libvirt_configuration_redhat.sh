@@ -5,7 +5,7 @@ if [ $EUID -ne 0 ]
 		echo "This program must run as root to function." 
 		exit 1
 fi
-echo "This will install and configure libvirt. Only run once."
+echo "This will install and configure libvirt."
 sleep 1s
 dnf install libvirt libvirt-glib libvirt-python virt-install virt-manager qemu qemu-common ebtables dnsmasq bridge-utils iptables swtpm
 sleep 1s
