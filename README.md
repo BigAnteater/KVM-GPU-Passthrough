@@ -21,11 +21,9 @@ For you lame Intel users, just enable
 
 ***Install the drivers for your linux if your using nvidia:***
 
-If you haven't done so already; you can use this git repo here, ony works for ubuntu/debian:
+If you haven't done so already; you can use this git repo here, ony works for ubuntu/debian, For fedora you will have to enable the non-free repos inside software and install the drivers from there.
 
 	git clone https://github.com/Scotchman0/NVIDIA_Drivers.git
-
-For fedora you will have to enable the non-free repos inside software and install the drivers from there.
 
 And then clone the repository by typing:
 
