@@ -13,7 +13,7 @@ GRUB=`cat /etc/default/grub | grep "GRUB_CMDLINE_LINUX" | rev | cut -c 2- | rev`
 GRUB+=" intel_iommu=on iommu=pt\""
 sed -i -e "s|^GRUB_CMDLINE_LINUX.*|${GRUB}|" /etc/default/grub
 
-grub2-mkconfig -o /etc/grub2-efi.cfg
+grub2-mkconfig -o /boot/grub2/grub.cfg && grub2-mkconfig -o /boot/efi/EFI/Fedora/grub.cfg
 sleep 5s
 clear
 echo
