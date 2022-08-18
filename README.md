@@ -21,11 +21,7 @@ For you lame Intel users, just enable
 
 ***Install the drivers for your linux if your using nvidia:***
 
-If you haven't done so already; you can use this git repo here, ony works for ubuntu/debian, For fedora you will have to enable the non-free repos inside software and install the drivers from there, be sure to update and install the drivers from the terminal. Be sure to reboot after updating.
-
-Fedora/Redhat NVIDIA install:
-
-	sudo dnf update -y && sudo dnf install xorg-x11-drv-nvidia -y
+If you haven't done so already; you can use this git repo here, only works for ubuntu/debian.
 	
 The Nvidia Drivers for APT based distros.
 
@@ -58,9 +54,6 @@ for Intel:
 4) Intel: 
 
 		sudo ./grub_setup_intel.sh
-
-
-***For Fedora/Redhat users, you will have to run grub2_redhat_setup_amd-efi.sh or grub2_redhat_setup_intel-efi.sh***
 
 
 
@@ -161,7 +154,7 @@ just simply follow the instructions on how to save the vbios in linux, do not wr
 
 	   sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios
 
-For Ubuntu/Debian/Fedora Based it should be placed inside `/usr/share/vgabios/`, the config libvirt script for Ubuntu/Fedora should create the dir for you if it doesn't exist, just place it there.
+For Ubuntu/Debian Based it should be placed inside `/usr/share/vgabios/`, the config libvirt script for Ubuntu should create the dir for you if it doesn't exist, just place it there.
 
 and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
   
