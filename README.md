@@ -332,7 +332,9 @@ This is usefull for people who want to name their VMs to something other than wi
 
 1) Edit the hooks script by typing 
 
+
 	sudo nano /etc/libvirt/hooks/qemu
+
 
 2) On the line with the if then statement, add in ``|| [[ $OBJECT == "RENAME TO YOUR VM" ]]`` before the ``;``.
 
