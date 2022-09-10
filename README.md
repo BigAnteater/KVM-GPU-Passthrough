@@ -318,6 +318,10 @@ You can use other manufacturers such as gigabyte, asus, etc; if you want to refl
 	
 You also need to patch the binary of qemu-system-x86_64, you can cp the file inside a new dir from /usr/bin/qemu-system-x86_64 to a new file such as /home/<username>/patch/qemu/qemu-system-x86_64, or you may keep it inside it's current directory with a new name such as the one listed above for safe keeping; be sure to run sudo.
 
+*** I have an error about /qemu-7.0.0/accel/accel-softmmu.c:82:accel_init_ops_interfaces: assertion failed: (ops != NULL)***
+
+do the following below.
+
 Here is the shell command, save the script and run the script if you are running it inside /usr/bin as sudo, otherwise save it to where you copied the emulator; edit the values when needed.
 Also be sure to chmod +x binary as an executable as sudo.
 
