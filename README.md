@@ -54,18 +54,26 @@ To configure libvirt run my script which configures libvirt and QEMU for you by 
 9) And then you should be able to click begin installation!
 10) After you finish installing windows, you should be good to shut down the VM and follow along with the next steps.
 
-### Patching your ROM
+### Exporting your ROM
 
-1) Go to https://www.techpowerup.com/vgabios/ and download the ROM of your ***exact*** GPU.
-![Screen Capture_select-area_20211203200439](https://user-images.githubusercontent.com/77298458/144696258-5a424e34-236a-4e20-adf7-723068707712.png)
-2) Once you have your rom downloaded, type in ``sudo pacman -S bless`` to download the hex editor to patch your rom.
-3) Open your ROM with the Bless hex editor, and as muta says: "This is where the real arcane s#!% happens."
-4) Press CTRL + F to search, and search for "VIDEO" as text.
-![Screen Capture_select-area_20211203201054](https://user-images.githubusercontent.com/77298458/144696438-6e7afb3e-b808-4bc7-a0be-8683c046f445.png)
-5) Then, delete everything before the "U.s", and save your ROM as something simple (i.e: patch.rom).
-![Screen Capture_select-area_20211203201250](https://user-images.githubusercontent.com/77298458/144696539-44ce50f6-c6fd-4d2d-9564-3be3fd663585.png)
-6) Once your ROM has been patched, open your terminal in the folder which you have your ROM saved in, and type in ``sudo mkdir /var/lib/libvirt/vbios/ && sudo mv <RENAME TO YOUR ROM>.rom /var/lib/libvirt/vbios`` and make sure to rename <RENAME TO YOUR ROM> to what you named your ROM.
-7) Then your ROM should be all patched and good to go!
+1) Find your GPU's device ID: `lspci -vnn | grep '\[03'`. You should see some output such as the following; the first bit (`03:00.0` in this case) is the device ID.
+```
+03:00.0 VGA compatible controller: Advanced Micro Devices [AMD] nee ATI RV710 [Radeon HD 4350/4550] (prog-if 00 [VGA controller])
+```
+1) Run `find /sys/devices -name rom` and ensure the device ID matches.
+For example looking at the case above, you'll want the last part before the `/rom` to be `03:00.0`, so you might see something like this (the extra `0000:` in front is fine):
+```
+/sys/devices/pci0000:00/0000:00:01.0/0000:03:00.0/rom
+```
+1) For convenience's sake, let's call this PATH_TO_ROM. You can manually set this variable as well, by first becoming root (run `sudo su`) then running `export PATH_TO_ROM=/sys/devices/pci0000:00/0000:00:01.0/0000:03:00.0/rom`
+1) Then, still as `root`, run the following commands:
+```
+echo 1 > $PATH_TO_ROM
+mkdir -p /var/lib/libvirt/vbios/
+cat $PATH_TO_ROM > /var/lib/libvirt/vbios/gpu.rom
+echo 0 > $PATH_TO_ROM
+```
+1) Run `exit` or press Ctrl-D to stop acting as `root`
 
 ### Hook Scripts
 
@@ -88,8 +96,8 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 ![Screen Capture_select-area_20211204064804](https://user-images.githubusercontent.com/77298458/144713848-a7918b97-5e1c-4961-b9ec-a9fc1259d777.png)
 2) Pass through your audio device and your USB controller. It will look like this for me
 ![Screen Capture_virt-manager_20211204065241](https://user-images.githubusercontent.com/77298458/144714016-bf504808-f7ff-4a2f-b533-540d596e794c.png)
-3) Remember the ROM we patched? Well we're gonna use it now. 
-4) Edit the XML of each passed through PCI device that has to do with your GPU and add the line ``<rom file="/var/lib/libvirt/vbios/<ROMFILE>.rom"/>``. Make sure to rename ROMFILE to what you named your ROM.
+3) Remember the ROM we exported? Well we're gonna use it now. 
+4) Edit the XML of each passed through PCI device that has to do with your GPU and add the line `<rom file="/var/lib/libvirt/vbios/gpu.rom"/>`.
 ![Screen Capture_virt-manager_20211204071027](https://user-images.githubusercontent.com/77298458/144714606-ac7d7cfe-b567-492a-a863-08557a58b5c8.png)
 5) Lastly, remove every spice/qxl device from your virtual machine
 ![Screen Capture_virt-manager_20211204071816](https://user-images.githubusercontent.com/77298458/144714841-974cdf8e-57ef-448f-ae2a-cd45809ddae2.png)
