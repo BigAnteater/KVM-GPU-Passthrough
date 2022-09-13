@@ -47,6 +47,11 @@ mv qemu.conf /etc/libvirt
 sleep 1s
 clear
 systemctl restart libvirtd
+clear
+echo "Setting up libvirt network"
+virsh net-start default
+virsh net-autostart default
+clear
 echo "QEMU has been successfully configured!"
 sleep 5s
 exit
