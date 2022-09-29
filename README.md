@@ -185,8 +185,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 ![Screen Capture_virt-manager_20211204070245](https://user-images.githubusercontent.com/77298458/144714348-ef5a9437-624e-41f7-b94f-9889722c993a.png)
 
 
-
-***NOTE: This is great if you're trying to use software that has macros for a gaming on a keyboard/mouse, would highly recommend doing this instead of passing the USB 3.0 though.***
+***NOTE: This is great if you're trying to use software that has macros for gaming on a keyboard/mouse, would highly recommend doing this instead of doing a full USB 3.0 passthough as it will detect the mouse and keyboard potentially as a generic interface.***
 
   1) Add every PCI device which has to do with your graphics card to the VM.
 
