@@ -198,7 +198,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
   3) usb redirect any usb devices that are having issues, i would redirect your headset for headset users and the mouse.
   add hardware > usb host device > the desired device
 
-*** NOTE: This is great if you're trying to use software that has macros for a gaming on a keyboard/mouse, would highly recommend doing this instead of passing the USB 3.0 though. ***
+***NOTE: This is great if you're trying to use software that has macros for a gaming on a keyboard/mouse, would highly recommend doing this instead of passing the USB 3.0 though.***
   
   ![oU1II4D](https://user-images.githubusercontent.com/68661602/150458011-ba7da45d-dfd9-41fe-a7e4-901a2aa0c433.png)
 
