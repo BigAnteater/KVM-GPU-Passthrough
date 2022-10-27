@@ -254,7 +254,7 @@ For the VM to actually pass the gpu, you need to add the PCI device to your VM. 
 If you wanted to hide virtualization inside task manager, which wouldn't hurt keep this code as is or remove:
 `<feature policy="disable" name="hypervisor"/>` Under `<CPU>`
 
-[and for the sake of it, here's a windows 11 example, do not copy paste.](https://raw.githubusercontent.com/Nthompson096/KVM-GPU-Passthrough/main/do-not-copy-paste.xml)
+[and for the sake of it, here's a windows 11 example, do copy paste if you want and feel free to use.](https://raw.githubusercontent.com/Nthompson096/KVM-GPU-Passthrough/main/copy-paste-example.xml)
 
 ## I want to change my smbios.
 
