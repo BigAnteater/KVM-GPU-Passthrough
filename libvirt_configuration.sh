@@ -26,8 +26,8 @@ gpasswd -M $USERNAME kvm
 gpasswd -M $USERNAME libvirt
 sleep 2s
 clear
-mv libvirtd.conf /etc/libvirt
-echo "mv libvirtd.conf /etc/libvirt"
+echo "cp libvirtd.conf /etc/libvirt"
+cp libvirtd.conf /etc/libvirt
 sleep 1s
 clear
 echo "libvirt has been successfully configured!"
@@ -42,8 +42,8 @@ clear
 echo "mv /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old"
 mv /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.old
 sleep 1s
-echo "mv qemu.conf /etc/libvirt"
-mv qemu.conf /etc/libvirt
+echo "cp qemu.conf /etc/libvirt"
+cp qemu.conf /etc/libvirt
 sleep 1s
 clear
 systemctl restart libvirtd
