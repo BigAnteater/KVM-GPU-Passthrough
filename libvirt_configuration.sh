@@ -26,8 +26,8 @@ gpasswd -M $USERNAME kvm
 gpasswd -M $USERNAME libvirt
 sleep 2s
 clear
-cp libvirtd.conf /etc/libvirt
 echo "cp libvirtd.conf /etc/libvirt"
+cp libvirtd.conf /etc/libvirt
 sleep 1s
 clear
 echo "libvirt has been successfully configured!"
